@@ -307,6 +307,26 @@ Selenium.prototype.doFlexDgSortDescending = function(locator, options) {
   if (typeof(res) == "object"){ throw new SeleniumError(res.message); }
 };
 
+Selenium.prototype.doFlexAdgExpandAll = function(locator, options) {
+  var strToObj = function(str){
+    var obj = {};
+    try { obj = eval("(" + str + ")") }
+    catch(err) {
+      var optArr = str.split(",")
+      for (var i=0;i<optArr.length;i++){
+        optArr[i] = optArr[i].replace(/^\s+|\s+$/, '');
+        var entryArr = optArr[i].split("=");
+        obj[entryArr[0]] = entryArr[1];
+      }
+    }
+    return obj; 
+  }
+  
+  var movie = this.browserbot.findElement(locator);
+  var res = movie.wrappedJSObject['fp_adgExpandAll'](strToObj(options));
+  if (typeof(res) == "object"){ throw new SeleniumError(res.message); }
+};
+
 Selenium.prototype.doFlexAdgItemOpen = function(locator, options) {
   var strToObj = function(str){
     var obj = {};
