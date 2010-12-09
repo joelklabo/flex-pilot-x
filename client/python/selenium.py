@@ -330,7 +330,7 @@ class selenium:
         Assert a display object 'options:flexlocator' contains the string 'options:validator'  in the Flex/Flash movie found by locator
         'locator' is an element locator
         """
-        self.do_command("flexAssertText", [locator,options])
+        self.do_command("flexAssertTextIn", [locator,options])
 
     def flex_assert_property(self,locator,options):
         """
@@ -344,6 +344,66 @@ class selenium:
 
     def wait_for_flex_object(self,locator,options):
         self.do_command("waitForFlexObject", [locator,options])    
+
+    def flex_slider_change(self, locator, options):
+        self.do_command("flexSliderChange", [locator,options])
+
+    def flex_date_change(self, locator, options):
+        self.do_command("flexDateChange", [locator,options])
+
+    def flex_dg_item_edit(self, locator, options):
+        self.do_command("flexDgItemEdit", [locator,options])
+
+    def flex_dg_column_stretch(self, locator, options):
+        self.do_command("flexDgColumnStretch", [locator,options])
+
+    def flex_dg_header_release(self, locator, options):
+        self.do_command("flexDgHeaderRelease", [locator,options])
+
+    def flex_dg_sort(self, locator, options):
+        self.do_command("flexDgSort", [locator,options])
+
+    def flex_dg_sort_ascending(self, locator, options):
+        self.do_command("flexDgSortAscending", [locator,options])
+
+    def flex_dg_sort_descending(self, locator, options):
+        self.do_command("flexDgSortDescending", [locator,options])
+        
+    def flex_adg_expand_all(self, locator, options):
+        self.do_command("flexAdgExpandAll", [locator, options])
+        
+    def flex_adg_get_tabular_data(self, locator):
+        self.do_command("flexAdgGetTabularData", [locator, options])
+        
+    def flex_adg_item_open(self, locator, options):
+        self.do_command("flexAdgItemOpen", [locator,options])
+
+    def flex_adg_item_close(self, locator, options):
+        self.do_command("flexAdgItemClose", [locator,options])
+
+    def flex_adg_column_stretch(self, locator, options):
+        self.do_command("flexAdgColumnStretch", [locator,options])
+
+    def flex_adg_header_release(self, locator, options):
+        self.do_command("flexAdgHeaderRelease", [locator,options])
+
+    def flex_adg_sort(self, locator, options):
+        self.do_command("flexAdgSort", [locator,options])
+
+    def flex_adg_sort_ascending(self, locator, options):
+        self.do_command("flexAdgSortAscending", [locator,options])
+
+    def flex_adg_sort_descending(self, locator, options):
+        self.do_command("flexAdgSortDescending", [locator,options])
+
+    def flex_adg_header_shift(self, locator, options):
+        self.do_command("flexAdgHeaderShift", [locator,options])
+
+    def flex_adg_item_edit(self, locator, options):
+        self.do_command("flexAdgItemEdit", [locator,options])
+
+    def flex_item_drag_drop(self, locator, options):
+        self.do_command("flexItemDragDrop", [locator,options])
 
     def click(self,locator):
         """

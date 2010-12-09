@@ -34,19 +34,23 @@ module Selenium
       end
 
       def flex_assert_text_in(locator, options)
-          remote_control_command("flexAssertText", [locator, options])
+          remote_control_command("flexAssertTextIn", [locator, options])
       end
 
       def flex_assert_property(locator, options)
           remote_control_command("flexAssertProperty", [locator, options])    
       end
       
+      def flex_date(locator, options)
+          remote_control_command("flexDate", [locator, options])
+      end
+
       def wait_for_flex_ready(locator, timeout)
           remote_control_command("waitForFlexReady", [locator,timeout])
       end
-      
+
       def wait_for_flex_object(locator, options)
-          remote_control_command("waitForFlexReady", [locator,options])
+          remote_control_command("waitForFlexObject", [locator,options])
       end
     end
   end
