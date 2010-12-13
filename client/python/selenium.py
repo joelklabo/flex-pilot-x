@@ -372,6 +372,9 @@ class selenium:
     def flex_adg_expand_all(self, locator, options):
         self.do_command("flexAdgExpandAll", [locator, options])
         
+    def flex_assert_text_in_adg(self, locator, options):
+        self.do_command("flexAssertTextInAdg", [locator, options])
+        
     def flex_assert_text_in_adg_cell(self, locator, options):
         self.do_command("flexAssertTextInAdgCell", [locator, options])
         

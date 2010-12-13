@@ -146,7 +146,11 @@ Selenium.prototype.doFlexAssertProperty = function(locator, options) {
   this.flex("fp_assertProperty", locator, options);
 };
 
-Selenium.prototype.doFlexAssertTextInAdgCell= function(locator, options) {
+Selenium.prototype.doFlexAssertTextInAdg = function(locator, options) {
+  this.flex("fp_assertTextInAdg", locator, options);
+};
+
+Selenium.prototype.doFlexAssertTextInAdgCell = function(locator, options) {
   this.flex("fp_assertTextInAdgCell", locator, options);
 };
 
@@ -268,6 +272,10 @@ try {
   
   RemoteSelenium.prototype.doWaitForFlexObject = function(locator,options) {
     return this.doCommand("waitForFlexObject", [locator, options], this.handleResults);
+  };
+  
+  RemoteSelenium.prototype.doFlexAssertTextInAdg = function(locator, options) {
+    return this.doCommand("flexAssetTextInAdg", [locator, options], this.handleResults);
   };
   
   RemoteSelenium.prototype.doFlexAssertTextInAdgCell = function(locator, options) {
