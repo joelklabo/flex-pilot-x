@@ -372,8 +372,8 @@ class selenium:
     def flex_adg_expand_all(self, locator, options):
         self.do_command("flexAdgExpandAll", [locator, options])
         
-    def flex_adg_get_tabular_data(self, locator):
-        self.do_command("flexAdgGetTabularData", [locator, options])
+    def flex_assert_text_in_adg_cell(self, locator, options):
+        self.do_command("flexAssertTextInAdgCell", [locator, options])
         
     def flex_adg_item_open(self, locator, options):
         self.do_command("flexAdgItemOpen", [locator,options])

@@ -146,6 +146,10 @@ Selenium.prototype.doFlexAssertProperty = function(locator, options) {
   this.flex("fp_assertProperty", locator, options);
 };
 
+Selenium.prototype.doFlexAssertTextInAdgCell= function(locator, options) {
+  this.flex("fp_assertTextInAdgCell", locator, options);
+};
+
 Selenium.prototype.doFlexAdgExpandAll = function(locator, options) {
   this.flex("fp_adgExpandAll", locator, options);
 };
@@ -259,15 +263,19 @@ try {
   };
 
   RemoteSelenium.prototype.doWaitForFlexReady = function(locator,timeout) {
-      return this.doCommand("waitForFlexReady", [script, timeout], this.handleResults);
+    return this.doCommand("waitForFlexReady", [script, timeout], this.handleResults);
   };
   
   RemoteSelenium.prototype.doWaitForFlexObject = function(locator,options) {
-      return this.doCommand("waitForFlexObject", [locator, options], this.handleResults);
+    return this.doCommand("waitForFlexObject", [locator, options], this.handleResults);
   };
   
+  RemoteSelenium.prototype.doFlexAssertTextInAdgCell = function(locator, options) {
+    return this.doCommand("flexAssertTextInAdgCell", [locator, options], this.handleResults);
+  };    
+  
   RemoteSelenium.prototype.doFlexAdgExpandAll = function(locator,options) {
-        return this.doCommand("adgExpandAll", [locator, options], this.handleResults);
+    return this.doCommand("adgExpandAll", [locator, options], this.handleResults);
   };
   
   RemoteSelenium.prototype.doFlexAdgSort = function(locator, options) {
