@@ -327,7 +327,7 @@ Selenium.prototype.doFlexAdgExpandAll = function(locator, options) {
   if (typeof(res) == "object"){ throw new SeleniumError(res.message); }
 };
 
-Selenium.prototype.doFlexAdgItemOpen = function(locator, options) {
+Selenium.prototype.doFlexAssertTextInAdg = function(locator, options) {
   var strToObj = function(str){
     var obj = {};
     try { obj = eval("(" + str + ")") }
@@ -343,7 +343,47 @@ Selenium.prototype.doFlexAdgItemOpen = function(locator, options) {
   }
   
   var movie = this.browserbot.findElement(locator);
-  var res = movie.wrappedJSObject['fp_adgItemOpen'](strToObj(options));
+  var res = movie.wrappedJSObject['fp_assertTextInAdg'](strToObj(options));
+  if (typeof(res) == "object"){ throw new SeleniumError(res.message); }
+};
+
+Selenium.prototype.doFlexAssertTextInAdg = function(locator, options) {
+  var strToObj = function(str){
+    var obj = {};
+    try { obj = eval("(" + str + ")") }
+    catch(err) {
+      var optArr = str.split(",")
+      for (var i=0;i<optArr.length;i++){
+        optArr[i] = optArr[i].replace(/^\s+|\s+$/, '');
+        var entryArr = optArr[i].split("=");
+        obj[entryArr[0]] = entryArr[1];
+      }
+    }
+    return obj; 
+  }
+  
+  var movie = this.browserbot.findElement(locator);
+  var res = movie.wrappedJSObject['fp_assertTextInAdg'](strToObj(options));
+  if (typeof(res) == "object"){ throw new SeleniumError(res.message); }
+};
+
+Selenium.prototype.doFlexAssertTextInAdgCell = function(locator, options) {
+  var strToObj = function(str){
+    var obj = {};
+    try { obj = eval("(" + str + ")") }
+    catch(err) {
+      var optArr = str.split(",")
+      for (var i=0;i<optArr.length;i++){
+        optArr[i] = optArr[i].replace(/^\s+|\s+$/, '');
+        var entryArr = optArr[i].split("=");
+        obj[entryArr[0]] = entryArr[1];
+      }
+    }
+    return obj; 
+  }
+  
+  var movie = this.browserbot.findElement(locator);
+  var res = movie.wrappedJSObject['fp_assertTextInAdgCell'](strToObj(options));
   if (typeof(res) == "object"){ throw new SeleniumError(res.message); }
 };
 
